@@ -89,12 +89,6 @@ def run_exp(SHOT_NUM=1, HEAD='fc', BACKBONE='resnet12', MTL='True', DATASET='min
 
         test_command = process_test_command(8000, base_command)
         os.system(test_command)
-        #test_command = process_test_command(0, base_command)
-        #os.system(test_command)
-        #for idx in range(MAX_ITER-1):
-        #    if idx!=0 and idx%SAVE_STEP==0:
-        #        test_command = process_test_command(idx, base_command)
-        #        os.system(test_command)
 
 
 run_exp(SHOT_NUM=1, HEAD='fc', BACKBONE='resnet12', MTL='True', DATASET='mini', PHASE='META')
@@ -108,19 +102,3 @@ run_exp(SHOT_NUM=5, HEAD='fc', BACKBONE='resnet12', MTL='True', DATASET='tiered'
 
 run_exp(SHOT_NUM=1, HEAD='cosine', BACKBONE='resnet12', MTL='True', DATASET='tiered', PHASE='META')
 run_exp(SHOT_NUM=5, HEAD='cosine', BACKBONE='resnet12', MTL='True', DATASET='tiered', PHASE='META')
-
-
-'''
-shot_list = [1]
-head_list = ['fc']
-backbone_list = ['resnet18']
-mtl_list = ['True', 'False']
-dataset_list = ['tiered']
-
-for the_shot in shot_list:
-    for the_head in head_list:
-        for the_backbone in backbone_list:
-            for the_mtl in mtl_list:
-                for the_dataset in dataset_list:
-                    run_exp(SHOT_NUM=the_shot, HEAD=the_head, BACKBONE=the_backbone, MTL=the_mtl, DATASET=the_dataset, PHASE='META')
-'''
